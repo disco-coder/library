@@ -6,5 +6,31 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>384</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div id="contact">Add New Book</div>
+  <div id="contactForm">
+  <form id="form" action="#">
+    <input placeholder="Title" type="text" id="title" name="title"/>
+    <input placeholder="Author" type="text" id="authot" name="author"/>
+    <input placeholder="Pages" type="number" id="pages" name="pages"/>
+    <button type="reset" onclick="myFunction()">Add book</button>
+  </form>
+</div>
 </body>
 </html>
