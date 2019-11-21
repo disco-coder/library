@@ -9,11 +9,6 @@ window.addEventListener("load", () => {
     })
 })
 
-let orwell = new Book("Nineteen Eighty-Four", "George Orwell", 324, "Read");
-let nowBook = new Book("The Power of Now", "Eckhart Tolle", 236, "Unread");
-addBookToLibrary(orwell, nowBook);
-render();
-
 
 // Clickable events
 document.addEventListener("click", (event) => {
