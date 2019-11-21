@@ -2,14 +2,15 @@
 let myLibrary = [];
 let localLibrary = JSON.parse(localStorage.getItem("myLibrary") || "[]");
 
+// Parse localStorage to myLibrary on page load
 window.addEventListener("load", () => {
     myLibrary = [];
     localLibrary.forEach(book => {
         myLibrary.push(book);
     })
+    populateBookshelf();
     render();
 })
-
 
 // Clickable events
 document.addEventListener("click", (event) => {
@@ -28,6 +29,15 @@ document.addEventListener("click", (event) => {
     }
 });
 
+function populateBookshelf() {
+    if (myLibrary.length == 0) {
+        let orwell = new Book("Nineteen Eighty-Four", "George Orwell", 324, "Read");
+        let nowBook = new Book("The Power of Now", "Eckhart Tolle", 236, "Unread");
+        addBookToLibrary(orwell, nowBook);
+        render();
+    }
+}
+
 function changeStatus() {
     let index = event.target.parentElement.parentElement.getAttribute("data-book");
     if (myLibrary[index]["status"] === "Read") {
@@ -39,6 +49,7 @@ function changeStatus() {
         event.target.classList.add("is-light");
         event.target.classList.remove("is-dark");
     }
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
 }
 
