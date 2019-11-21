@@ -7,6 +7,7 @@ window.addEventListener("load", () => {
     localLibrary.forEach(book => {
         myLibrary.push(book);
     })
+    render();
 })
 
 
