@@ -1,10 +1,19 @@
 // Array of books
 let myLibrary = [];
+let localLibrary = JSON.parse(localStorage.getItem("myLibrary") || "[]");
+
+window.addEventListener("load", () => {
+    myLibrary = [];
+    localLibrary.forEach(book => {
+        myLibrary.push(book);
+    })
+})
 
 let orwell = new Book("Nineteen Eighty-Four", "George Orwell", 324, "Read");
 let nowBook = new Book("The Power of Now", "Eckhart Tolle", 236, "Unread");
 addBookToLibrary(orwell, nowBook);
 render();
+
 
 // Clickable events
 document.addEventListener("click", (event) => {
@@ -57,6 +66,7 @@ function Book(title, author, pages, status) {
 
 function addBookToLibrary(...book) {
     myLibrary.push(...book);
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
 }
 
 function render() {
