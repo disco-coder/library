@@ -1,10 +1,12 @@
+// Array of books
 let myLibrary = [];
+
 let orwell = new Book("Nineteen Eighty-Four", "George Orwell", 324, "Read");
 let nowBook = new Book("The Power of Now", "Eckhart Tolle", 236, "Unread");
 addBookToLibrary(orwell, nowBook);
 render();
 
-// Clickable
+// Clickable events
 document.addEventListener("click", (event) => {
     let modal = document.querySelector(".modal");
     if (event.target.classList.contains("removeButton")) removeBook();
