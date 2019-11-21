@@ -114,5 +114,6 @@ function resetDOM() {
 
 function removeBook() {
     myLibrary.splice(event.target.parentElement.parentElement.getAttribute("data-book"), 1);
+    localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
 }
