@@ -1,14 +1,15 @@
 // Array of books
 let myLibrary = [];
 let localLibrary = JSON.parse(localStorage.getItem("myLibrary") || "[]");
+let addDummies = JSON.parse(localStorage.getItem("addDummies"));
 
 // Parse localStorage to myLibrary on page load
 window.addEventListener("load", () => {
-    myLibrary = [];
+    myLibrary = []; 
     localLibrary.forEach(book => {
         myLibrary.push(book);
     })
-    populateBookshelf();
+    if (addDummies != false) populateBookshelf();
     render();
 })
 
@@ -125,6 +126,9 @@ function resetDOM() {
 
 function removeBook() {
     myLibrary.splice(event.target.parentElement.parentElement.getAttribute("data-book"), 1);
+    if (myLibrary.length == 0) {
+        localStorage.setItem("addDummies", false);
+    }
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
     render();
 }
