@@ -89,8 +89,6 @@ function render() {
                 let td = document.createElement("td");
                 tr.appendChild(td);
                 let statusButton = document.createElement("button");
-                if (book[prop] === "Read") statusButton.textContent = "Read";
-                if (book[prop] === "Unread") statusButton.textContent = "Unread";
                 if (book[prop] === "Read") {
                     statusButton.textContent = "Read";
                     statusButton.classList.add("is-light")
