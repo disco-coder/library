@@ -41,50 +41,52 @@
   </section>
   
   <!-- New book form -->
-  <div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="box">
-      <h2 class="title is-3">Add New Book</h2>
+  <form action="#">
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+        <h2 class="title is-3">Add New Book</h2>
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input class="input" placeholder="Book Title" type="text" id="title" name="title" required/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Author</label>
+          <div class="control">
+            <input class="input" placeholder="Author" type="text" id="author" name="author" required/>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Number of Pages</label>
+          <div class="control">
+            <input class="input" placeholder="Pages" type="number" id="pages" name="pages" required/>
+          </div>
+        </div>
       <div class="field">
-        <label class="label">Title</label>
+        <label class="label">Read Status</label>
         <div class="control">
-          <input class="input" placeholder="Book Title" type="text" id="title" name="title" required/>
+          <div class="select">
+            <select name="status" id="status">
+              <option value="Read">Read</option>
+              <option value="Unread">Unread</option>
+            </select>
+          </div>
         </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
-      <div class="field">
-        <label class="label">Author</label>
+      <div class="field is-grouped">
         <div class="control">
-          <input class="input" placeholder="Author" type="text" id="author" name="author" required/>
+          <button type="submit" class="button is-dark" id="addBook">Add Book</button>
         </div>
-      </div>
-      <div class="field">
-        <label class="label">Number of Pages</label>
         <div class="control">
-          <input class="input" placeholder="Pages" type="number" id="pages" name="pages" required/>
+          <button class="button cancel">Cancel</button>
         </div>
       </div>
-    <div class="field">
-      <label class="label">Read Status</label>
-      <div class="control">
-        <div class="select">
-          <select name="status" id="status">
-            <option value="Read">Read</option>
-            <option value="Unread">Unread</option>
-          </select>
-        </div>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-dark" id="addBook">Add Book</button>
-      </div>
-      <div class="control">
-        <button class="button cancel">Cancel</button>
-      </div>
-    </div>
-  </div>
+  </form>
 
 </body>
 </html>
