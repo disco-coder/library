@@ -1,6 +1,6 @@
 # Library
 
-A simple library where you can store read/unread books.
+A simple library where you can store read/unread books. Project made as a part of [The Odin Project's curriculum](https://www.theodinproject.com/courses/javascript/lessons/library).
 
 ## Getting Started
 
